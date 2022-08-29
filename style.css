@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Disabling text highlight */
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+body {
+  /* display: grid;
+  place-content: center;
+  width: 100%;
+  min-height: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  /* width: 100%; */
+  background: hsl(222, 26%, 31%);
+  font-family: "Spartan", sans-serif;
+}
+
+.active-background-light {
+  background: hsl(0, 0%, 90%);
+}
+.active-background-retro {
+  background: hsl(268, 75%, 9%);
+}
+/* 
+.container {
+  min-width: 25rem;
+  min-height: 30rem;
+} */
+
+.container {
+  --max-width: 1110px;
+  /* --container-padding: 1.5rem; */
+
+  width: min(var(--max-width), 100% - (var(--container-padding) * 2));
+  margin-inline: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.row-span-2 {
+  grid-row: span 2;
+}
+
+.theme-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  color: white;
+}
+
+.active-color-dark {
+  color: hsl(221, 14%, 31%);
+}
+
+.active-color-light {
+  color: hsl(60, 10%, 19%);
+}
+
+.active-color-retro {
+  color: hsl(52, 100%, 62%);
+}
+
+.logo-text {
+  display: flex;
+  align-items: center;
+}
+
+.theme-text {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  transform: translateX(50%);
+  padding-top: 0.4rem;
+  font-size: 0.6rem;
+}
+
+.theme-toggle {
+  display: flex;
+  flex-direction: column;
+  transform: translateX(30%);
+}
+
+.active-toggle {
+  opacity: 1;
+}
+
+.disabled-toggle {
+  opacity: 0;
+}
+
+.theme-number {
+  display: grid;
+  grid-template-columns: repeat(3, 1rem);
+  grid-template-rows: 1rem;
+  place-content: center;
+}
+
+.theme-number h6 {
+  display: grid;
+  place-content: center;
+  font-size: 0.5rem;
+}
+
+.input-bar {
+  display: flex;
+  background: hsl(224, 36%, 15%);
+  border-radius: 10px;
+  height: 5rem;
+  color: white;
+}
+
+.active-input-bar-light {
+  background: hsl(0, 0%, 93%);
+}
+.active-input-bar-retro {
+  background: hsl(268, 71%, 12%);
+}
+
+#calc-input {
+  background: none;
+  border: none;
+  width: 95%;
+  border-radius: 10px;
+  text-align: right;
+  font-family: "Spartan", sans-serif;
+  font-size: 2rem;
+}
+
+.active-color-white {
+  color: white;
+}
+
+#calc-input:focus {
+  outline: none;
+  caret-color: transparent;
+}
+
+/* Removing spinning arrows from the input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.switch-theme {
+  display: grid;
+  grid-template-columns: repeat(3, 1rem);
+  place-content: center;
+  /* background: hsl(223, 31%, 20%); */
+  /* max-width: fit-content; */
+  justify-items: center;
+}
+
+.switch-theme button {
+  display: flex;
+  border: none;
+  border-radius: 50%;
+  height: 0.7rem;
+  width: 0.7rem;
+  cursor: pointer;
+}
+
+.theme {
+  display: grid;
+  place-content: center;
+  background: hsl(223, 31%, 20%);
+}
+
+.one {
+  border-radius: 10px 0 0 10px;
+  width: 1.2rem;
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+}
+
+.two {
+  height: 1.2rem;
+  width: 1rem;
+}
+
+.three {
+  border-radius: 0 10px 10px 0;
+  width: 1.2rem;
+  padding-right: 0.2rem;
+  padding-left: 0.2rem;
+}
+
+.switch-theme .theme-dark {
+  background: hsl(6, 63%, 50%);
+}
+
+.switch-theme .theme-light {
+  background: hsl(25, 98%, 40%);
+}
+
+.switch-theme .theme-retro {
+  background: hsl(176, 100%, 44%);
+}
+
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1rem;
+  padding-block: 1rem;
+  background: hsl(223, 31%, 20%);
+  border-radius: 10px;
+}
+
+@media (max-width: 50em) {
+  .keypad-grid {
+    gap: 0.5rem;
+  }
+}
+
+.active-keypad-background-light {
+  background: hsl(0, 5%, 81%);
+}
+
+.active-keypad-background-retro {
+  background: hsl(268, 71%, 12%);
+}
+
+.keypad-grid button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.row-one,
+.row-two,
+.row-three,
+.row-four,
+.row-five {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 50em) {
+  .row-one,
+  .row-two,
+  .row-three,
+  .row-four,
+  .row-five {
+    justify-content: center;
+    column-gap: 0.5rem;
+  }
+}
+
+.big {
+  font-family: "Spartan", sans-serif;
+  font-size: 1rem;
+  width: 11rem;
+  height: 3rem;
+  border-radius: 10px;
+}
+
+.small {
+  font-family: "Spartan", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  width: 5rem;
+  height: 3rem;
+  border-radius: 10px;
+  background: hsl(30, 25%, 89%);
+  box-shadow: 0 2px hsl(28, 16%, 65%);
+}
+
+.small:active {
+  transform: translateY(2px);
+  opacity: 0.9;
+  box-shadow: 0 1px 3px;
+}
+
+.big:active {
+  transform: translateY(2px);
+  opacity: 0.9;
+  box-shadow: 0 1px 3px;
+}
+
+.active-key-background-light {
+  background: hsl(45, 7%, 89%);
+}
+
+.active-key-background-retro {
+  background: hsl(268, 47%, 21%);
+}
+
+.active-key-shadow-light {
+  box-shadow: 0 2px hsl(35, 11%, 61%);
+}
+
+.active-key-shadow-retro {
+  box-shadow: 0 2px hsl(290, 70%, 36%);
+}
+
+.reset {
+  background: hsl(225, 21%, 49%);
+  color: white;
+  box-shadow: 0 2px hsl(224, 28%, 35%);
+}
+
+.delete {
+  font-size: 1rem;
+  background: hsl(225, 21%, 49%);
+  color: white;
+  box-shadow: 0 2px hsl(224, 28%, 35%);
+}
+
+.active-res-del-background-light {
+  background: hsl(185, 42%, 37%);
+}
+
+.active-res-del-shadow-light {
+  box-shadow: 0 2px hsl(185, 58%, 25%);
+}
+
+.active-res-del-background-retro {
+  background: hsl(281, 89%, 26%);
+}
+
+.active-res-del-shadow-retro {
+  box-shadow: 0 2px hsl(285, 91%, 52%);
+}
+
+.equals {
+  background: hsl(6, 63%, 50%);
+  color: white;
+  box-shadow: 0 2px hsl(6, 70%, 34%);
+}
+
+.active-equals-background-light {
+  background: hsl(25, 98%, 40%);
+}
+
+.active-equals-shadow-light {
+  box-shadow: 0 2px hsl(25, 98%, 40%);
+}
+
+.active-equals-background-retro {
+  background: hsl(176, 100%, 44%);
+}
+
+.active-equals-shadow-retro {
+  box-shadow: 0 2px hsl(177, 92%, 70%);
+}
+
+.active-equals-color-retro {
+  color: black;
+}
